@@ -1,4 +1,4 @@
-# Projet4eb Scraping
+# Projet4 Gestion de Tournoi Echecs
 Ce projet s’inscrit dans le cadre de la réalisation d’une application console de gestion de tournoi d'echecs. 
 L'application va permettre création d'un tournoi, l'ajout des joueurs à un tournoi et l'enregistrement des informations dans une mini base de données.
 # Execution du code
