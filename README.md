@@ -24,11 +24,11 @@ L'application va permettre création d'un tournoi, l'ajout des joueurs à un tou
  * Dans la seconde option de ce second menu nous aurons les options suivantes:
  1. Le choix d'un tournoi
    lorque nous choissons un tournoi nous pourrons afficher toutes les information sur le tournoi à savoir:
-   1.Afficher la liste des tours du tournois 
-   2.Afficher la liste de tous les joueurs du tournois
-   3.Afficher la liste de tous les matchs du tournois
-   4.Modifier le rang des joueurs du tournoi
+   1. Afficher la liste des tours du tournois 
+   2. Afficher la liste de tous les joueurs du tournois
+   3. Afficher la liste de tous les matchs du tournois
+   4. Modifier le rang des joueurs du tournoi
  2. le retour
 * le choix 2 du menu principale nous permet d'afficher la liste de tous les acteurs du tournois
-* lorsque nous choisissons un joueur nous pouvons modifier son rang
+lorsque nous choisissons un joueur nous pouvons modifier son rang
 
