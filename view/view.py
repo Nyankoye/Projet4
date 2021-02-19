@@ -121,14 +121,18 @@ def create_tournament_view():
     return {"name": name, "place": place, "description": description, "turn_number": turn_number}
 
 
-def menu_create_player():
+def menu_create_player(player_list):
     """Fonction permettant d'afficher le choix entre la creation et la selection de joueur"""
-    print("--------------------------------------------------")
-    print("1. Chosir un joeur existant")
-    print("2. Créer un nouveau joueur")
-    print("--------------------------------------------------")
-    choice = input_int("Votre choix:\n")
-    return choice
+    if len(player_list) == 0:
+        choice = 2
+        return choice
+    else:
+        print("--------------------------------------------------")
+        print("1. Choisir un joueur existant")
+        print("2. Créer un nouveau joueur")
+        print("--------------------------------------------------")
+        choice = input_int("Votre choix:\n")
+        return choice
 
 
 def create_player_view(number):

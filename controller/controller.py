@@ -18,11 +18,11 @@ def create_players(tournament):
     """Fonction Permetant de creer huits joueurs a un tournoi"""
     enter_player = 1
     while enter_player <= 8:
-        selection = view.menu_create_player()
+        player_list = select_players()
+        selection = view.menu_create_player(player_list)
         if selection == 1:
             # ---------------------------------------------------------------------------------
             # Joueur existant
-            player_list = select_players()
             view.print_actors(player_list)
             data = create_existing_player()
             player_db = Player(data['Nom'], data['Prenom'], data['Date de Naissance'],
