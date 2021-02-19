@@ -37,11 +37,11 @@ if __name__ == '__main__':
                                 round_list = controller.get_round_list(tournament_list[tournament_choice])
                                 view.print_rounds_list(tournament_list[tournament_choice], round_list)
                             elif SECOND_CHOICE == 2:
-                                # affichage de la liste tous les joeurs d'un tournoi
+                                # affichage de la liste de tous les joeurs d'un tournoi
                                 player_list = controller.get_player_list(tournament_list[tournament_choice])
                                 view.print_players_list(tournament_list[tournament_choice], player_list)
                             elif SECOND_CHOICE == 3:
-                                # affichage de la liste tous les matchs d'un tournoi
+                                # affichage de la liste de tous les matchs d'un tournoi
                                 matches_list = controller.get_matches_list(tournament_list[tournament_choice])
                                 view.print_matches_list(tournament_list[tournament_choice], matches_list)
                             elif SECOND_CHOICE == 4:
@@ -132,8 +132,12 @@ if __name__ == '__main__':
                     # Sauvegarde du tournoi dans la base de données
                     controller.save_tournament(current_tournament)
 
-                    # Modification du rang des joueur
+                    # affichage de la liste de tous les matchs du tournoi
                     last_tournament = controller.get_tournament_list()[-1]
+                    matches_list = controller.get_matches_list(last_tournament)
+                    view.print_matches_list(last_tournament, matches_list)
+
+                    # Modification du rang des joueur
                     controller.modify_ranking(last_tournament)
                 else:
                     MENU = False

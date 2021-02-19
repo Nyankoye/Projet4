@@ -94,8 +94,6 @@ def select_player_view(players_list):
     """Fonction permettant d'afficher la liste des joeurs existant"""
     print("----------------------------------------------------------------------------------")
     print("#. Veuillez faire un choix entre le joueur 0 et le joueur {}:".format(len(players_list) - 1))
-    print(pd.DataFrame(players_list))
-    print("-----------------------------------------------------------------------------------")
     choice = input_int("Veuillez saisir votre choix:\n")
     return choice
 

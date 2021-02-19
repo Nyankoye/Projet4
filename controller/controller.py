@@ -20,15 +20,21 @@ def create_players(tournament):
     while enter_player <= 8:
         selection = view.menu_create_player()
         if selection == 1:
-            player_choice = view.select_player_view(select_players())
-            data = select_players()[player_choice]
+            # ---------------------------------------------------------------------------------
+            # Joueur existant
+            player_list = select_players()
+            view.print_actors(player_list)
+            data = create_existing_player()
             player_db = Player(data['Nom'], data['Prenom'], data['Date de Naissance'],
                                data['Sexe'], data['Classement'])
             # add the player id to the list of tournament players_id
             tournament.players_index_list.append(data.doc_id)
             # add the player to the list of tournament players with the tournament method
             tournament.add_player(player_db)
+            # ---------------------------------------------------------------------------------
         elif selection == 2:
+            # ---------------------------------------------------------------------------------
+            # Nouveau joueur
             data = view.create_player_view(enter_player)
             player = Player(data['name'], data['first_name'], data['birth_day'], data['sex'],
                             data['ranking'])
@@ -39,8 +45,23 @@ def create_players(tournament):
             # prendre l'identifiantiant du joueur
             for id_player in get_players_id(1):
                 tournament.players_index_list.append(id_player)
-
+            # ---------------------------------------------------------------------------------
         enter_player += 1
+
+
+def create_existing_player():
+    """Fonction permettant de choisir un joueur existant"""
+    logic_test = True
+    data = ""
+    while logic_test:
+        try:
+            player_choice = view.select_player_view(select_players())
+            data = select_players()[player_choice]
+            logic_test = False
+        except IndexError as error:
+            view.show(error)
+            continue
+    return data
 
 
 def save_tournament(tournament):
