@@ -1,3 +1,7 @@
+"""Classe des Matchs
+    """
+
+
 # coding:utf-8
 
 
@@ -16,9 +20,9 @@ class Match:
         """Représentation de notre objet. C'est cette chaîne qui sera affichée
         quand on saisit directement le dictionnaire dans l'interpréteur, ou en
         utilisant la fonction 'repr'"""
-
-        return "Match({},{},({}-{}))".format(self.player_blanc.player_first_name, self.player_black.player_first_name
-                                             , self.score_blanc, self.score_black)
+        return "Match({},{},({}-{}))".format(self.player_blanc.player_first_name,
+                                             self.player_black.player_first_name,
+                                             self.score_blanc, self.score_black)
 
     def __eq__(self, other):
         return (self.player_blanc == other.player_blanc) and (self.player_black == other.player_black) \

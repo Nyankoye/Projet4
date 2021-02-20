@@ -1,3 +1,4 @@
+"""Classe des joueurs"""
 # coding:utf-8
 
 
@@ -9,12 +10,11 @@ class Player:
      the sex of the player          : player_sex
      the player's ranking           : player_ranking """
 
-    total_score = 0
-
     def __init__(self, name, first_name, birth_day, sex, ranking):
         self.player_name = name
         self.player_first_name = first_name
         self.player_birth_day = birth_day
+        self.total_score = 0
         self.player_sex = sex
         self.player_ranking = ranking
         self.player_score = 0
@@ -24,8 +24,9 @@ class Player:
         quand on saisit directement le dictionnaire dans l'interpréteur, ou en
         utilisant la fonction 'repr'"""
 
-        return "Player({},{},{},{},{})".format(self.player_name, self.player_first_name, self.player_birth_day,
-                                               self.player_sex, self.player_ranking)
+        return "Player({},{},{},{},{})".format(self.player_name, self.player_first_name,
+                                               self.player_birth_day, self.player_sex,
+                                               self.player_ranking)
 
 
 if __name__ == '__main__':

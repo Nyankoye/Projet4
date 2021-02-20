@@ -1,3 +1,4 @@
+"""Classe des tours"""
 # coding:utf-8
 import datetime
 
@@ -18,6 +19,8 @@ class Round:
         self.end_date = 0
 
     def add_matches(self, match):
+        """Fontion permettant d'ajouter un matche à la liste des
+           des matches d'un tour"""
         self.matches_list.append(match)
 
     def __repr__(self):
@@ -25,8 +28,8 @@ class Round:
         quand on saisit directement le dictionnaire dans l'interpréteur, ou en
         utilisant la fonction 'repr'"""
 
-        return "{},{},{},{},{}".format(self.matches_list, self.matches_index_list, self.round_name, self.start_date,
-                                    self.end_date)
+        return "{},{},{},{},{}".format(self.matches_list, self.matches_index_list,
+                                       self.round_name, self.start_date, self.end_date)
 
 
 if __name__ == '__main__':
